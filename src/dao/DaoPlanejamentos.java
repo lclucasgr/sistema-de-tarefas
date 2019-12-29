@@ -88,7 +88,7 @@ public class DaoPlanejamentos extends ConnectionFactory {
         ArrayList<Planejamentos> listaPlanejamentos = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement("SELECT * FROM planejamentos ORDER BY horario_inicio");
+            stmt = con.prepareStatement("SELECT * FROM planejamentos ORDER BY horario_inicio ASC");
             rs = stmt.executeQuery();
 
             while (rs.next()) {

@@ -9,6 +9,7 @@ public class Tarefas {
     private String prazo;
     private String frequencia;
     private String prioridade;
+    private String situacao;
 
     public int getId() {
         return id;
@@ -56,6 +57,14 @@ public class Tarefas {
 
     public void setPrioridade(String prioridade) {
         this.prioridade = prioridade;
+    }
+    
+    public String getSituacao() {
+        return situacao;
+    }
+
+    public void setSituacao(String situacao) {
+        this.situacao = situacao;
     }
     
     

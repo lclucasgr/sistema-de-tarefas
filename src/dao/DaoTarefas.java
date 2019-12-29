@@ -20,12 +20,13 @@ public class DaoTarefas extends ConnectionFactory {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("INSERT INTO tarefas (descricao, conclusao, prazo, frequencia, prioridade)VALUES(?,?,?,?,?)");
+            stmt = con.prepareStatement("INSERT INTO tarefas (descricao, conclusao, prazo, frequencia, prioridade, situacao)VALUES(?,?,?,?,?,?)");
             stmt.setString(1, tarefa.getDescricao());
             stmt.setString(2, tarefa.getConclusao());
             stmt.setString(3, tarefa.getPrazo());
             stmt.setString(4, tarefa.getFrequencia());
             stmt.setString(5, tarefa.getPrioridade());
+            stmt.setString(6, tarefa.getSituacao());
 
             stmt.executeUpdate();
 
@@ -64,13 +65,14 @@ public class DaoTarefas extends ConnectionFactory {
         PreparedStatement stmt = null;
 
         try {
-            stmt = con.prepareStatement("UPDATE tarefas SET descricao = ? ,conclusao = ?,prazo = ?,frequencia = ?,prioridade = ? WHERE id = ?");
+            stmt = con.prepareStatement("UPDATE tarefas SET descricao = ? ,conclusao = ?,prazo = ?,frequencia = ?,prioridade = ?, situacao = ? WHERE id = ?");
             stmt.setString(1, tarefa.getDescricao());
             stmt.setString(2, tarefa.getConclusao());
             stmt.setString(3, tarefa.getPrazo());
             stmt.setString(4, tarefa.getFrequencia());
             stmt.setString(5, tarefa.getPrioridade());
-            stmt.setInt(6, tarefa.getId());
+            stmt.setString(6, tarefa.getSituacao());
+            stmt.setInt(7, tarefa.getId());
 
             stmt.executeUpdate();
 
@@ -105,6 +107,7 @@ public class DaoTarefas extends ConnectionFactory {
                 t.setPrazo(rs.getString("prazo"));
                 t.setFrequencia(rs.getString("frequencia"));
                 t.setPrioridade(rs.getString("prioridade"));
+                t.setSituacao(rs.getString("situacao"));
                 listaTarefas.add(t);
             }
 
