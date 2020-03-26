@@ -94,7 +94,7 @@ public class DaoTarefas extends ConnectionFactory {
         ArrayList<Tarefas> listaTarefas = new ArrayList<>();
 
         try {
-            stmt = con.prepareStatement("SELECT * FROM tarefas ORDER BY conclusao DESC");
+            stmt = con.prepareStatement("SELECT * FROM tarefas ORDER BY id DESC");
             rs = stmt.executeQuery();
 
             while (rs.next()) {

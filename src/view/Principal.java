@@ -35,6 +35,8 @@ public class Principal extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         edOpcao = new javax.swing.JMenu();
         mnSair = new javax.swing.JMenuItem();
+        edFaculdade = new javax.swing.JMenu();
+        mnDisciplina = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -105,6 +107,18 @@ public class Principal extends javax.swing.JFrame {
 
         jMenuBar1.add(edOpcao);
 
+        edFaculdade.setText("Faculdade");
+
+        mnDisciplina.setText("Disciplinas");
+        mnDisciplina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnDisciplinaActionPerformed(evt);
+            }
+        });
+        edFaculdade.add(mnDisciplina);
+
+        jMenuBar1.add(edFaculdade);
+
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -146,6 +160,11 @@ public class Principal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_mnSairActionPerformed
 
+    private void mnDisciplinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnDisciplinaActionPerformed
+        new Disciplina().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mnDisciplinaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -185,10 +204,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton btPlanejamentos;
     private javax.swing.JButton btTarefas;
     private javax.swing.JButton edDiarios;
+    private javax.swing.JMenu edFaculdade;
     private javax.swing.JMenu edOpcao;
     private javax.swing.JButton edPlanos;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenuItem mnDisciplina;
     private javax.swing.JMenuItem mnSair;
     // End of variables declaration//GEN-END:variables
 }
